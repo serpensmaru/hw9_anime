@@ -2,7 +2,7 @@
 
 ### Collapse + Callback Chat + Liker
 [![Build status](https://ci.appveyor.com/api/projects/status/p392eqdicer31bvq/branch/main?svg=true)](https://ci.appveyor.com/project/serpensmaru/hw9-anime/branch/main)
-### [Deploy - gh_pages]()
+### [Deploy - gh_pages](https://serpensmaru.github.io/hw9_anime/)
 
 
 # 9. Домашнее задание к лекции «Анимации и CSS»

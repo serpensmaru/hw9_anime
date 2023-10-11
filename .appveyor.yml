@@ -1,6 +1,11 @@
+
+environment:
+  access_token:
+    secure: +zw3wEWftBABcTsUKYuV9q9m/g1rVnPeYLd5Ztl+Jh8GUpjD++OkwmLUbseU6VeI
+
 image: Ubuntu1804  # образ для сборки
 
-stack: node 10  # окружение
+stack: node 16  # окружение
 
 branches:
   only:
@@ -9,7 +14,7 @@ branches:
 cache: node_modules  # кеширование
 
 install:
-  - npm install # команда установки зависимостей
+  - npm install --force  # команда установки зависимостей
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
@@ -17,15 +22,12 @@ build_script:
   - npm run build   # команда сборки
 
 test_script:
-  - npm run lint  # скрипт тестирования
-
-environment:
-  my_variable:
-    secure: AHqZsGNbKL+RxqV2hVEAbGM8RTIGSbxiD1MI16xTYS+IXcuQqLd/6z/LalapwHdt
-
-deploy_script: # скрипт развёртывания
+  - npm run lint # скрипт тестирования
+  
+deploy_script:  # скрипт развёртывания
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
-  - echo "https://$my_variable:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
   - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+  
