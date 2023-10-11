@@ -1,0 +1,134 @@
+.widget-callback-chat {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.widget-callback-chat__btn-active {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: red;
+  box-shadow: 5px 5px 5px 0 #bababa;
+  outline: none;
+
+  transition: 100ms linear;
+}
+
+.widget-callback-chat__btn-active:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.widget-callback-chat .widget-callback-chat__btn-active_hidden {
+  transform: scale(0);
+}
+
+.widget-callback-chat__body {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  width: 350px;
+  height: 340px;
+  right: 10px;
+  bottom: 10px;
+
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 0 5px 0 #bababa;
+  padding: 20px;
+
+  transition: 100ms linear;
+  transform: scale(0.5);
+}
+
+.widget-callback-chat__body_large {
+  transform: scale(1);
+}
+
+.widget-callback-chat__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.widget-callback-chat__title {
+  font-family: 'Arial Narrow', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.widget-callback-chat__btn-close {
+  position: relative;
+  background-color: transparent;
+  flex: 0 0 21px;
+  height: 21px;
+
+  font-weight: bold;
+  border: none;
+
+  cursor: pointer;
+}
+
+.widget-callback-chat__btn-close::before,
+.widget-callback-chat__btn-close::after {
+  content: '';
+
+  display: block;
+  width: 16px;
+  height: 2px;
+
+  position: absolute;
+  top: 10px;
+  left: 2px;
+
+  background-color: black;
+}
+
+.widget-callback-chat__btn-close::before {
+  transform: rotate(45deg);
+}
+
+.widget-callback-chat__btn-close::after {
+  transform: rotate(-45deg);
+}
+
+.widget-callback-chat__form {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1 0 auto;
+}
+
+.widget-callback-chat__message {
+  flex: 1 0 auto;
+
+  font-size: 15px;
+  resize: none;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.widget-callback-chat__btn-send {
+  display: block;
+  width: 100%;
+
+  font-size: 16px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+
+  padding: 8px;
+}
+
+._hide {
+  display: none;
+}

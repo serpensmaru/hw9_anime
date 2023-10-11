@@ -1,0 +1,125 @@
+.widget-liker {
+  display: inline-block;
+  position: relative;
+}
+
+.widget-liker__btn {
+  position: relative;
+  z-index: 2;
+
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: red;
+
+  color: white;
+
+  padding: 8px 30px;
+}
+
+.widget-liker__btn:hover {
+ cursor: pointer;
+}
+
+.widget-liker__heart {
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+
+  top: 0;
+  left: calc(50% - 30px/2);
+
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+.widget-liker__heart img {
+  display: block;
+}
+
+.heart-animation_1 {
+  animation-name: heart-trajectory_1;
+}
+
+.heart-animation_2 {
+  animation-name: heart-trajectory_2;
+}
+
+.heart-animation_3 {
+  animation-name: heart-trajectory_3;
+}
+
+.heart-animation_4 {
+  animation-name: heart-trajectory_4;
+}
+
+@keyframes heart-trajectory_1 {
+  0% {
+  }
+  25% {
+    left: calc(25% - 30px/2);
+  }
+  50% {
+  }
+  75% {
+    left: calc(75% - 30px/2);
+  }
+  100% {
+    top: -200px;
+    opacity: 0
+  }
+}
+
+@keyframes heart-trajectory_2 {
+  0% {
+  }
+  25% {
+    left: calc(50% - 30px/2);
+  }
+  50% {
+    left: calc(75% - 30px/2);
+  }
+  75% {
+    left: calc(50% - 30px/2);
+  }
+  100% {
+    top: -200px;
+    opacity: 0
+  }
+}
+
+@keyframes heart-trajectory_3 {
+  0% {
+  }
+  25% {
+    left: calc(50% - 30px/2);
+  }
+  50% {
+    left: calc(25% - 30px/2);
+  }
+  75% {
+    left: calc(50% - 30px/2);
+  }
+  100% {
+    top: -200px;
+    opacity: 0
+  }
+}
+
+@keyframes heart-trajectory_4 {
+  0% {
+  }
+  25% {
+    left: calc(75% - 30px/2);
+  }
+  50% {
+  }
+  75% {
+    left: calc(25% - 30px/2);
+  }
+  100% {
+    top: -200px;
+    opacity: 0
+  }
+}
